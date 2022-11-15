@@ -17,7 +17,7 @@
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "core-js": "^3.6.5",
     "postcss": "^8.2.10",
-    "postcss-css-variables": "^0.17.0",
+    "postcss-css-variables": "^0.18.0",
     "rollup": "^2.3.4",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-css-only": "^3.1.0",
