@@ -32,6 +32,6 @@
     "monaco-editor": "^0.34.1",
     "sirv-cli": "^1.0.0",
     "svelte-select": "^3.12.0",
-    "svelte-simple-modal": "^0.6.0"
+    "svelte-simple-modal": "^1.4.6"
   }
 }
