@@ -20,8 +20,8 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/wailsapp/wails v1.16.9
 	golang.org/x/image v0.0.0-20210220032944-ac19c3e999fb // indirect
-	google.golang.org/genproto v0.0.0-20210219173056-d891e3cb3b5b
-	google.golang.org/grpc v1.51.0
-	google.golang.org/protobuf v1.27.1
+	google.golang.org/genproto v0.0.0-20221118155620-16455021b5e6
+	google.golang.org/grpc v1.52.0
+	google.golang.org/protobuf v1.28.1
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
