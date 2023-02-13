@@ -15,7 +15,7 @@ jobs:
       if: matrix.platform != 'windows-latest'
       id: version
 #      run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
-      run: echo "::set-output name=tag::v0.5.2"
+      run: echo "tag=v0.5.2" >> $GITHUB_OUTPUT
 
     - name: Get version tag (windows)
       if: matrix.platform == 'windows-latest'
@@ -23,7 +23,7 @@ jobs:
 #      run: |
 #        $tag = $env:GITHUB_REF -replace "refs/tags/", ""
 #        echo "::set-output name=tag::$(echo $tag)"
-      run: echo "::set-output name=tag::v0.5.2"
+      run: echo "tag=v0.5.2" >> $GITHUB_OUTPUT
 
     - name: Install Go
       uses: actions/setup-go@v3
@@ -31,7 +31,7 @@ jobs:
         go-version: ${{ matrix.go-version }}
 
     - name: Chechout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install Wails
       run: |
@@ -57,7 +57,7 @@ jobs:
 
     - name: Upload darwin disk image
       if: matrix.platform == 'macos-latest'
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Wombat_${{ steps.version.outputs.tag }}_Darwin_x86_64.dmg
         path: Wombat_${{ steps.version.outputs.tag }}_Darwin_x86_64.dmg
@@ -74,7 +74,7 @@ jobs:
 
     - name: Upload linux tar.gz
       if: matrix.platform == 'ubuntu-latest'
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Wombat_${{ steps.version.outputs.tag }}_Linux_x86_64.tar.gz
         path: Wombat_${{ steps.version.outputs.tag }}_Linux_x86_64.tar.gz
@@ -90,7 +90,7 @@ jobs:
 
     # - name: Upload linux app image
     #   if: matrix.platform == 'ubuntu-16.04'
-    #   uses: actions/upload-artifact@v2
+    #   uses: actions/upload-artifact@v3
     #   with:
     #     name: Wombat_${{ steps.version.outputs.tag }}_Linux_x86_64.AppImage
     #     path: Wombat_${{ steps.version.outputs.tag }}_Linux_x86_64.AppImage
@@ -107,7 +107,7 @@ jobs:
 
     - name: Upload windows zip
       if: matrix.platform == 'windows-latest'
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Wombat_${{ steps.versionw.outputs.tag }}_Windows_x86_64.zip
         path: Wombat_${{ steps.versionw.outputs.tag }}_Windows_x86_64.zip
@@ -119,7 +119,7 @@ jobs:
     - name: Get version tag
       id: version
 #      run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
-      run: echo "::set-output name=tag::v0.5.2"
+      run: echo "tag=v0.5.2" >> $GITHUB_OUTPUT
 
     - name: Get changelog url
       id: changelog
