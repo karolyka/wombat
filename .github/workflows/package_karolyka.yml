@@ -44,8 +44,7 @@ jobs:
         cp wails.json ~/.wails/
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${{ steps.version.outputs.tag }}" info.plist
         /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${{ steps.version.outputs.tag }}" info.plist
-        find /home/runner -name wails
-        /home/runner/go/bin/wails build -f -p -ldflags "-X wombat/internal/app.semver=${{ steps.version.outputs.tag }}"
+        wails build -f -p -ldflags "-X wombat/internal/app.semver=${{ steps.version.outputs.tag }}"
 
     - name: Create darwin disk image
       if: matrix.platform == 'macos-latest'
