@@ -14,14 +14,16 @@ jobs:
     - name: Get version tag (unix)
       if: matrix.platform != 'windows-latest'
       id: version
-      run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
+#      run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
+      run: echo "::set-output name=tag::v0.5.2"
 
     - name: Get version tag (windows)
       if: matrix.platform == 'windows-latest'
       id: versionw
-      run: |
-        $tag = $env:GITHUB_REF -replace "refs/tags/", ""
-        echo "::set-output name=tag::$(echo $tag)"
+#      run: |
+#        $tag = $env:GITHUB_REF -replace "refs/tags/", ""
+#        echo "::set-output name=tag::$(echo $tag)"
+      run: echo "::set-output name=tag::v0.5.2"
 
     - name: Install Go
       uses: actions/setup-go@v3
