@@ -1,6 +1,7 @@
 name: Packaging
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
   package:
@@ -11,12 +12,12 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
     - name: Get version tag (unix)
-      if: matrix.platform != windows-latest
+      if: matrix.platform != 'windows-latest'
       id: version
       run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
 
     - name: Get version tag (windows)
-      if: matrix.platform == windows-latest
+      if: matrix.platform == 'windows-latest'
       id: versionw
       run: |
         $tag = $env:GITHUB_REF -replace "refs/tags/", ""
