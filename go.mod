@@ -17,11 +17,9 @@ require (
 	github.com/leaanthony/slicer v1.5.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/wailsapp/wails v1.16.9
 	golang.org/x/image v0.0.0-20210220032944-ac19c3e999fb // indirect
-	google.golang.org/genproto v0.0.0-20221118155620-16455021b5e6
-	google.golang.org/grpc v1.52.3
+	google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f
+	google.golang.org/grpc v1.53.0
 	google.golang.org/protobuf v1.28.1
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
